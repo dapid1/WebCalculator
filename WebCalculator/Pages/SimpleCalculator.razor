@@ -1,0 +1,45 @@
+﻿@page "/SimpleCalculator"
+
+<h3>Simple Calculator</h3>
+
+<div class="wrap">
+    <form name="simpleCalc">
+
+        <input type="number" name="display" placeholder="Output" id="display" @onchange="OnValueChanged">
+        <br><br>
+        <input type="number" name="num1" placeholder="first number" tabindex="" @bind="num1">
+        <input type="text" name="oparator" id="opp" placeholder="+" maxlength="1" pattern="[A|b]" @bind="opp">
+        <input type="number" name="num2" placeholder="second number" @bind="num2">
+        <input type="button" value="=" onclick="handleClick()">
+        <br><br>
+        <input type="button" value="DELETE" onclick="simpleCalc.display.value=''" id="del">
+    </form>
+
+
+</div>
+<p>display value = @display</p>
+<p>num1 = @num1</p>
+<p>opp = @opp</p>
+<p>num2 = @num2</p>
+@code {
+    private string num1 = "0";
+    private string num2 = "0";
+    private string opp = "+";
+    private string display = "0";
+
+    public string Num1 { get => num1; set => num1 = value; }
+    public string Num2 { get => num2; set => num2 = value; }
+    public string Opp { get => opp; set => opp = value; }
+    public string Display { get => display; set => display = value; }
+
+    [Parameter]  
+    public EventCallback < string > ValueChanged {  
+        get;  
+        set;  
+    }  
+    private Task OnValueChanged(ChangeEventArgs e)
+    {
+        display = e.Value.ToString();
+        return ValueChanged.InvokeAsync(display);
+    }
+}
