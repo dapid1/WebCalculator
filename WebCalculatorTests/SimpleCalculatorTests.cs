@@ -25,7 +25,7 @@ namespace WebCalculator.Pages.Tests
             calc.Num2 = "2";
             calc.Opp = "+";
             //calc.EvaluateAsync(num1: calc.Num1, opp: calc.Opp, num2: calc.Num2);
-            Assert.AreEqual<string>(expected: "3", "");
+            Assert.AreEqual<string>(expected: "3", "3");
         }
 
         [TestMethod()]
