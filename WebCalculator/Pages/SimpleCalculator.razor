@@ -5,11 +5,11 @@
 <div class="wrap">
     <form name="simpleCalc">
 
-        <input type="number" name="display" placeholder="Output" id="display" @onchange="OnValueChanged">
+        <input type="number" name="display" placeholder="@display" id="display" @onchange="OnValueChanged">
         <br><br>
-        <input type="number" name="num1" placeholder="first number" tabindex="" @bind="num1">
-        <input type="text" name="oparator" id="opp" placeholder="+" maxlength="1" pattern="[A|b]" @bind="opp">
-        <input type="number" name="num2" placeholder="second number" @bind="num2">
+        <input type="number" name="num1" placeholder="@num1" tabindex="" @bind="num1">
+        <input type="text" name="oparator" id="opp" placeholder="@opp" maxlength="1" pattern="[A|b]" @bind="opp">
+        <input type="number" name="num2" placeholder="@num2" @bind="num2">
         <input type="button" value="=" onclick="handleClick()">
         <br><br>
         <input type="button" value="DELETE" onclick="simpleCalc.display.value=''" id="del">
