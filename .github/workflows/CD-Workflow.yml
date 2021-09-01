@@ -22,10 +22,10 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }} 
       -name: Install dependancies
-      run: dotnet restore
+        run: dotnet restore
+        
 
-      -name: Build the app
-      run: dotnet build --configuration Release --no-restore
+      
       
       # Run dotnet build and publish
       - name: dotnet build and publish
